@@ -33,13 +33,16 @@ cqm = ConstrainedQuadraticModel()
 # TO-DO: Define CQM Objective
 
 # Add the two constraints
+
 cqm.add_constraint(quicksum(x[i] for i in range(n)) <= 2, label='max items')
+
 # TO-DO: Define CQM Weight Constraint
 
 
 # Submit to the CQM sampler
 sampler = LeapHybridCQMSampler()
 sampleset = sampler.sample_cqm(cqm)
+sampleset = sampleset.aggregate()
 
 print("\nFull sample set:")
 print(sampleset)
