@@ -1,4 +1,4 @@
-# Copyright 2022 D-Wave Systems Inc. test
+# Copyright 2022 D-Wave Systems Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,17 +21,21 @@ W = 10
 n = len(values)
 
 # Create the binary variables
-x = [Binary(i) for i in range(n)]
+
+# TO-DO: Define Binary Decision Variable
+
 
 # Construct the CQM
 cqm = ConstrainedQuadraticModel()
 
 # Add the objective
-cqm.set_objective(quicksum(-values[i]*x[i] for i in range(n)))
+
+# TO-DO: Define CQM Objective
 
 # Add the two constraints
-cqm.add_constraint(quicksum(weights[i]*x[i] for i in range(n)) <= W, label='max weight')
 cqm.add_constraint(quicksum(x[i] for i in range(n)) <= 2, label='max items')
+# TO-DO: Define CQM Weight Constraint
+
 
 # Submit to the CQM sampler
 sampler = LeapHybridCQMSampler()
