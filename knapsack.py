@@ -40,8 +40,11 @@ cqm.add_constraint(quicksum(x[i] for i in range(n)) <= 2, label='max items')
 
 
 # Submit to the CQM sampler
+
 sampler = LeapHybridCQMSampler()
-sampleset = sampler.sample_cqm(cqm)
+
+# TO-DO: Submit to CQM
+
 sampleset = sampleset.aggregate()
 
 print("\nFull sample set:")
