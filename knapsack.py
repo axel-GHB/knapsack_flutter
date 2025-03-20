@@ -20,33 +20,27 @@ weights = [3, 5, 9, 4, 2]
 W = 10
 n = len(values)
 
-# Create the binary variables
-
-# TO-DO: Define Binary Decision Variable
+#TO-DO: Create the binary variables
 
 
-# Construct the CQM
-cqm = ConstrainedQuadraticModel()
+#TO-DO: Construct the CQM
 
-# Add the objective
 
-# TO-DO: Define CQM Objective
+#TO-DO: Add the objective
 
-# Add the two constraints
+
+#TO-DO: Add the weight constraints
 
 cqm.add_constraint(quicksum(x[i] for i in range(n)) <= 2, label='max items')
 
-# TO-DO: Define CQM Weight Constraint
+
+#TO-DO: Define the Sampler
+
+#TO-DO: Submit to the CQM sampler
 
 
-# Submit to the CQM sampler
-
-sampler = LeapHybridCQMSampler()
-
-# TO-DO: Submit to CQM
 
 sampleset = sampleset.aggregate()
-
 print("\nFull sample set:")
 print(sampleset)
 
